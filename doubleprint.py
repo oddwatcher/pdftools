@@ -1,6 +1,4 @@
-from tkinter import E
 import PyPDF2 as pdf
-from matplotlib.pyplot import close
 din = input("The file to print:")
 oddout = open("./second.pdf",'wb')
 evenout = open("./first.pdf",'wb')
