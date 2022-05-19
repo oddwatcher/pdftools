@@ -1,9 +1,9 @@
 import PyPDF2 as pdf
-din = input("The file to print:")
 oddout = open("./second.pdf",'wb')
 evenout = open("./first.pdf",'wb')
 while True:
     try:
+        din = input("The file to print:\n")
         open(din,"r")
         break
     except:
