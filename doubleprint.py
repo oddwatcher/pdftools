@@ -1,13 +1,14 @@
 import PyPDF2 as pdf
 oddout = open("./second.pdf",'wb')
 evenout = open("./first.pdf",'wb')
+din = "C:/Users/scien/Desktop/1.pdf"
 while True:
     try:
-        din = input("The file to print:\n")
         open(din,"r")
         break
     except:
         print("file not exist")
+        din = input("The PDF to process")
 pdfin = pdf.PdfFileReader(din)
 lastpage = pdf.PdfFileReader("./lastpage.pdf")
 pdfodd = pdf.PdfFileWriter()
@@ -32,5 +33,7 @@ pdfeven.write(evenout)
 pdfodd.write(oddout)
 evenout.close()
 oddout.close()
-print("Even:%d,Odd:%d,Total:%d",pdfeven.getNumPages(),pdfodd.getNumPages(),total+1)
+outstr = "Even:%d,Odd:%d,Total:%d" %(pdfeven.getNumPages(),pdfodd.getNumPages(),total+1)
+print(outstr)
+input("press to restart\n")
 

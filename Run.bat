@@ -1,2 +1,3 @@
+:loop
 python doubleprint.py 
-pause
+goto loop
