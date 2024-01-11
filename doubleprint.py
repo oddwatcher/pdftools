@@ -32,10 +32,10 @@ while (True):
         for i in range(1, total-1, 2):
             page = pdfin.pages[i]
             pdfodd.add_page(page)
-        if (total+1) %2 !=0:
+        if (total+1) %2 ==0:
             pdfodd.add_page(lastpage.pages[0])
-    oddout = open(f"./output/{str(f)}second.pdf", 'wb')
-    evenout = open(f"./output/{str(f)}first.pdf", 'wb')
+    oddout = open(f"./output/{str(f)}_second.pdf", 'wb')
+    evenout = open(f"./output/{str(f)}_first.pdf", 'wb')
     pdfeven.write(evenout)
     pdfodd.write(oddout)
     evenout.close()
